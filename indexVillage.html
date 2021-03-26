@@ -1,0 +1,94 @@
+
+<!DOCTYPE HTML>
+
+<html>
+<head>
+	<title>Coy Keepers</title>
+	<link rel="stylesheet" href="/Users/sewii/Desktop/Classes_FALL2020/Classes_Spring2021/2021 Challenge/Study Vibes/StudyVillageCSS.css" />
+
+</head>
+
+<body>
+    <div class = "header">
+        
+    </div>
+
+    
+    <div class = "split right"> 
+        <div class = "center"> 
+            <br><br>
+            <h2> Welome </h2>
+            <h1>
+                <form method = "post" action="index.html">
+                    <input placeholder="Enter your name" id = "name" type = "text">
+                    <input type="button" id = "submitButton" value = "Submit" onclick = "return welcome()">
+                    <h1 id = "welcomeValue"></h1>
+                </form></h1>
+
+        <div class = music> 
+            <!--Taken from: https://soundcloud.com/lonesomejupiter/sets/midnight-lofi
+            NOTE: Width should always be 50-->
+            <iframe width="50%" height="600" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/836728033&color=%23f7bbff&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/sakura-ly" title="Sakura Ly" target="_blank" style="color: #cccccc; text-decoration: none;">Sakura Ly</a> · <a href="https://soundcloud.com/sakura-ly/cute-lofi-mix-songs-to-help-you-be-happy-j-a-p-a-n-e-s-e-l-o-f-i" title="Cute Lofi Mix Songs To Help You Be Happy - 寛げる [ J A P A N E S E L O F I]" target="_blank" style="color: #cccccc; text-decoration: none;">Cute Lofi Mix Songs To Help You Be Happy - 寛げる [ J A P A N E S E L O F I]</a></div>
+
+
+        </div>
+    </div> 
+
+    <div class = "split left"> 
+        <div class= "center">
+        <br><br>
+        <h1> 25 March 2021</h1> 
+        <h2> " To begin is the first battle"</h2>
+        <h3>~Lao Taoz</h3>
+
+
+        <iframe width="475" height="250"
+            src="https://vclock.com/embed/timer/#countdown=00:25:00&date=2021-03-25T21:51:02&theme=0&ampm=1&sound=cuckoo" 
+            frameborder="0" 
+            allowfullscreen>
+        </iframe>
+
+        <br><br>
+        <h3 style="color: bisque;">To use the checklist: <br>click the + to enter, click once to cross off, 
+            click twice to remove,<br> and refreshing will erase the entire list! </li>
+        </h3>
+        <div class = "container">
+            <input id = "inputFeild" type = "text"><button id = "addToDo">+</button>
+            <div class="to-do" id = "todoContainter">
+    
+            </div>
+        </div>
+    </div>
+</div> 
+        
+    </div> 
+    <h5>This website was made by Sarah Wright. This is a working progress so please be kind!</h5>
+
+</body>
+
+<script>
+    let addToDoButton = document.getElementById('addToDo'); 
+let todoContainter = document.getElementById('todoContainter'); 
+let inputFeild = document.getElementById('inputFeild');
+
+    addToDoButton.addEventListener('click', function(){
+        var paragraph = document.createElement('p'); 
+        paragraph.classList.add("paragraph-styling"); 
+        paragraph.innerText = inputFeild.value; 
+        todoContainter.appendChild(paragraph); 
+        inputFeild.value = ""; 
+        paragraph.addEventListener('click', function(){
+            paragraph.style.textDecoration = "line-through"; 
+        })
+        paragraph.addEventListener('dblclick', function(){
+            todoContainter.removeChild(paragraph);
+        })
+    })
+
+    function welcome(){
+            var x = document.getElementById("name").value; 
+            document.getElementById("welcomeValue").innerHTML = x; 
+            document.getElementById("name").style.display = 'none'; 
+            document.getElementById("submitButton").style.display = 'none'; 
+        }
+</script>
