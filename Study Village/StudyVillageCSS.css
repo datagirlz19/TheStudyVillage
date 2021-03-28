@@ -12,6 +12,11 @@ body{
 
 .header{
     position: absolute;
+    width: 100%;
+}
+
+.iframe{
+  border: 1px solid black;
 }
 
 .centered{
@@ -75,3 +80,4 @@ section{
     outline: none;
     vertical-align: middle;
 }
+
